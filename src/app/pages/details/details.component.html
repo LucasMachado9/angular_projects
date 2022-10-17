@@ -1,0 +1,19 @@
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <a [routerLink]="['']" class="text-muted">Voltar</a>
+  <a role="button" class="btn btn-danger" (click)="destroy()">Apagar Recomendação</a>
+</div>
+
+<strong class="d-block" *ngIf="loading">Carregando...</strong>
+
+<div *ngIf="!loading && recommendation">
+  <div class="row">
+    <div class="col-2">
+      <img [src]="recommendation.image_url" class="card-img-top rounded shadow">
+    </div>
+    <div class="col-8">
+      <h1 class="my-3">{{recommendation.name}}</h1>
+      <div class="badge rounded-pill text-bg-primary mb-2">{{recommendation.category.name}}</div>
+      <p class="card-text">{{recommendation.description }}</p>
+    </div>
+  </div>
+</div>
